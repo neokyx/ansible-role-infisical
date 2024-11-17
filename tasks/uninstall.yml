@@ -20,19 +20,19 @@
         state: absent
 
 
-- name: Check existence of Infisical frontend systemd service
-  ansible.builtin.stat:
-    path: "{{ devture_systemd_docker_base_systemd_path }}/{{ infisical_identifier }}-frontend.service"
-  register: infisical_frontend_service_stat
+#- name: Check existence of Infisical frontend systemd service
+#  ansible.builtin.stat:
+#    path: "{{ devture_systemd_docker_base_systemd_path }}/{{ infisical_identifier }}-frontend.service"
+#  register: infisical_frontend_service_stat
 
-- when: infisical_frontend_service_stat.stat.exists | bool
-  block:
-    - name: Ensure Infisical frontend systemd service is stopped
-      ansible.builtin.service:
-        name: "{{ infisical_identifier }}-frontend"
-        state: stopped
-        enabled: false
-        daemon_reload: true
+#- when: infisical_frontend_service_stat.stat.exists | bool
+#  block:
+#    - name: Ensure Infisical frontend systemd service is stopped
+#      ansible.builtin.service:
+#        name: "{{ infisical_identifier }}-frontend"
+#        state: stopped
+#        enabled: false
+#        daemon_reload: true
 
     - name: Ensure Infisical frontend systemd service does not exist
       ansible.builtin.file:
