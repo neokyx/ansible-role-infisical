@@ -39,7 +39,7 @@ infisical_container_additional_networks: "{{ infisical_container_additional_netw
 infisical_container_additional_networks_auto: []
 infisical_container_additional_networks_custom: []
 
-infisical_backend_container_image: "{{ infisical_backend_container_image_registry_prefix }}infisical/backend:{{ infisical_backend_container_image_tag }}"
+infisical_backend_container_image: "{{ infisical_backend_container_image_registry_prefix }}infisical:{{ infisical_backend_container_image_tag }}"
 infisical_backend_container_image_registry_prefix: docker.io/
 infisical_backend_container_image_tag: "{{ infisical_version }}"
 infisical_backend_container_image_force_pull: "{{ infisical_backend_container_image.endswith(':latest') }}"
@@ -208,7 +208,7 @@ infisical_backend_container_labels_traefik_additional_response_headers_auto: |
   }}
 infisical_backend_container_labels_traefik_additional_response_headers_custom: {}
 
-infisical_frontend_container_image: "{{ infisical_backend_container_image_registry_prefix }}infisical/frontend:{{ infisical_frontend_container_image_tag }}"
+infisical_frontend_container_image: "{{ infisical_backend_container_image_registry_prefix }}infisical:{{ infisical_frontend_container_image_tag }}"
 infisical_frontend_container_image_registry_prefix: docker.io/
 infisical_frontend_container_image_tag: "{{ infisical_version }}"
 infisical_frontend_container_image_force_pull: "{{ infisical_frontend_container_image.endswith(':latest') }}"
